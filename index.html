@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wand - 내 마음대로 Build-up 하는 나만의 AI 공간</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #0B0F19; color: #F3F4F6; }
+        .neon-glow-purple { box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.5); }
+        .neon-text-cyan { text-shadow: 0 0 10px rgba(6, 182, 212, 0.5); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-violet-500/30">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-black tracking-wider bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">The Wand</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#hero" class="hover:text-white transition-colors">Wand 소개</a>
+                <a href="#use-cases" class="hover:text-white transition-colors">활용 사례</a>
+                <a href="#features" class="hover:text-white transition-colors">사용 방법</a>
+                <a href="#pricing" class="hover:text-white transition-colors">스펙 및 요금제</a>
+            </nav>
+            <a href="#contact" class="bg-gradient-to-r from-violet-600 to-cyan-500 text-white text-xs font-bold px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-violet-500/20">
+                도입 및 문의
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-40 pb-24 md:py-48 flex flex-col items-center justify-center text-center px-6 min-h-screen">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-violet-500/10 border border-violet-500/30 text-violet-300 mb-6 tracking-wide uppercase">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse"></span> Zero-UI AI 단말기
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6 text-white">
+                내 마음대로 Build-up 하는<br>
+                <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">나만의 AI 공간</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                배터리도 버튼도 없습니다. 매끈한 조약돌 형태의 Wand를 가볍게 터치하는 순간, 나만의 안전한 디지털 공간이 열리고 완벽한 AI 집사가 당신을 맞이합니다.
+            </p>
+            
+            <div class="relative w-full max-w-3xl mx-auto rounded-2xl border border-gray-800 bg-[#0F1424]/60 p-4 shadow-2xl neon-glow-purple">
+                <div class="aspect-video rounded-xl bg-gradient-to-b from-[#161D33] to-[#0B0F19] flex flex-col items-center justify-center overflow-hidden relative group">
+                    <div class="absolute w-40 h-40 bg-violet-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700"></div>
+                    <i class="fa-solid fa-door-open text-5xl bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-4 animate-bounce"></i>
+                    <p class="text-sm font-semibold text-gray-200 tracking-wide">Wand가 공간을 여는 시각적 시네마틱 무비</p>
+                    <p class="text-xs text-gray-500 mt-2">사용자 손길에 맞춰 열리는 다채로운 방들과 AI 집사의 에스코트</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="py-24 bg-[#080B13] border-y border-gray-900 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                    Wand AI와 함께 나만의 공간을 꾸미고,<br>소중한 사람들을 초대해 보세요.
+                </h2>
+                <div class="w-12 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-[#0F1424]/40 border border-gray-800 hover:border-violet-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold text-lg mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all">01</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-key text-violet-400 text-lg"></i> Step 1. 내 집 마련 (공간 생성)
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-400 font-light leading-relaxed">
+                        <p class="text-gray-200 font-medium">“Wand를 가볍게 터치하는 순간, 굳게 닫혀있던 나만의 공간이 열립니다.”</p>
+                        <p>번거로운 ID나 비밀번호는 잊으세요. 해킹이나 개인정보 유출 걱정도 없습니다.</p>
+                        <p>오직 나만이 열 수 있는, 세상에 단 하나뿐인 절대적인 디지털 공간이 탄생합니다.</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#0F1424]/40 border border-gray-800 hover:border-violet-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold text-lg mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all">02</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-couch text-violet-400 text-lg"></i> Step 2. 방 꾸미기와 기록 (아카이브)
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-400 font-light leading-relaxed">
+                        <p class="text-gray-200 font-medium">“Wand AI와 편안하게 대화하며 빈방을 나의 일상과 취향으로 채워보세요.”</p>
+                        <p>나의 기록이 쌓일수록 AI 집사는 점점 더 똑똑해지며, 나를 가장 잘 이해하는 완벽한 파트너로 성장합니다.</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#0F1424]/40 border border-gray-800 hover:border-violet-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold text-lg mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all">03</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic text-violet-400 text-lg"></i> Step 3. 맞춤형 인테리어 (대시보드)
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-400 font-light leading-relaxed">
+                        <p class="text-gray-200 font-medium">“이제 내 공간을 내 입맛에 맞게 인테리어 할 시간입니다.”</p>
+                        <p>AI 집사에게 원하는 배치를 말해보세요. 흩어진 기록들을 모아 가장 보기 편한 나만의 맞춤형 화면을 실시간으로 조립해 줍니다.</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#0F1424]/40 border border-gray-800 hover:border-violet-500/30 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold text-lg mb-6 group-hover:bg-violet-600 group-hover:text-white transition-all">04</div>
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-users text-violet-400 text-lg"></i> Step 4. 손님 초대 (공유 & AI 응대)
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-400 font-light leading-relaxed">
+                        <p class="text-gray-200 font-medium">“정성껏 꾸민 내 공간에 친구와 동료들을 초대해 보세요.”</p>
+                        <p>내가 자리를 비워도 걱정 없습니다. 똑똑한 AI 집사가 내가 남겨둔 기록을 바탕으로 손님들을 대신해 친절하고 정확하게 응대해 줍니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-cyan-400">Use Cases</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-4">이렇게 써보세요!</h2>
+                <p class="text-gray-400 font-light text-sm">대표적인 시나리오를 선택해 Wand가 일상을 바꾸는 방식을 시뮬레이션해 보세요.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mb-12 bg-[#0F1424]/60 p-2 rounded-xl border border-gray-800 max-w-3xl mx-auto">
+                <button onclick="switchTab('creator')" id="tab-btn-creator" class="w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md">
+                    <i class="fa-solid fa-map-location-dot"></i> 크리에이터 맛집지도
+                </button>
+                <button onclick="switchTab('corporate')" id="tab-btn-corporate" class="w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-shield-halved"></i> 기업 안심 보안 관리
+                </button>
+                <button onclick="switchTab('senior')" id="tab-btn-senior" class="w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-heart-pulse"></i> 시니어 돌봄 케어
+                </button>
+            </div>
+
+            <div class="bg-[#0F1424]/40 border border-gray-800 rounded-2xl p-6 md:p-10 shadow-xl relative min-h-[450px]">
+                
+                <div id="tab-content-creator" class="tab-pane space-y-8">
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-cyan-400">
+                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/10">AI 멀티턴 대화</span>
+                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/10">Wand AI 에이전트</span>
+                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/10">나만의 대시보드</span>
+                        <span class="px-2.5 py-1 rounded-md bg-cyan-500/10">공유하기</span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-extrabold text-white">📸 “내가 맛집을 꽤 아는데, 나만의 지도를 만들어 볼까?”</h3>
+                    
+                    <div class="space-y-4 max-w-3xl bg-[#0B0F19]/80 p-5 rounded-xl border border-gray-800 text-sm">
+                        <div class="border-l-2 border-violet-500 pl-3 py-1">
+                            <span class="text-xs font-bold text-violet-400 uppercase tracking-wider block mb-1">나의 공간에 기록하기</span>
+                            <p class="text-gray-300 font-medium">나: "Wand야, 방금 다녀온 XX동 중국집 진짜 최고야! 제육볶음이 특히 맛있어."</p>
+                            <p class="text-gray-400 mt-1">Wand: "제육볶음이 맛있었군요! 혹시 특별한 이유가 있었나요?"</p>
+                            <p class="text-gray-300">나: "사장님이 30년 동안 요리하셨는데, 웍을 다루는 솜씨가 남다르시더라고."</p>
+                        </div>
+                        <div class="border-l-2 border-cyan-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-1">대시보드 인테리어 하기</span>
+                            <p class="text-gray-300 font-medium">나: "지금까지 기록한 맛집들을 지역별로 묶어주고, 내가 극찬한 곳 3개랑 별로였던 곳 3개를 비교해서 한눈에 볼 수 있는 지도로 꾸며줘."</p>
+                            <p class="text-gray-400 mt-1"><i class="fa-solid fa-spinner animate-spin text-xs mr-1 text-cyan-400"></i> Wand: "요청하신 나만의 맛집 대시보드 인테리어가 완료되었습니다! (지역별 맛집 위젯 생성)"</p>
+                        </div>
+                        <div class="border-l-2 border-fuchsia-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block mb-1">손님 초대 및 AI 응대</span>
+                            <p class="text-gray-300 font-medium">손님: "Wand야, 지금 내 위치에서 가장 가까운 추천 맛집이 어디야?"</p>
+                            <p class="text-gray-400 mt-1">Wand: "가장 가까운 곳에 주인님께서 극찬하신 XX 식당이 있습니다. 사장님의 30년 웍 솜씨가 담긴 제육볶음을 강력 추천하셨어요. 걸어서 5분 거리인데 지도 앱으로 연결해 드릴까요?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-content-corporate" class="tab-pane space-y-8 hidden">
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-violet-400">
+                        <span class="px-2.5 py-1 rounded-md bg-violet-500/10">AI 멀티턴 대화</span>
+                        <span class="px-2.5 py-1 rounded-md bg-violet-500/10">TagR/W Vision</span>
+                        <span class="px-2.5 py-1 rounded-md bg-violet-500/10">Wand AI 에이전트</span>
+                        <span class="px-2.5 py-1 rounded-md bg-violet-500/10">나만의 대시보드</span>
+                        <span class="px-2.5 py-1 rounded-md bg-violet-500/10">보안 전용 공유</span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-extrabold text-white">☕ “부서별로 쏟아지는 지침사항, 스마트하게 관리하고 싶어!”</h3>
+                    
+                    <div class="space-y-4 max-w-3xl bg-[#0B0F19]/80 p-5 rounded-xl border border-gray-800 text-sm">
+                        <div class="border-l-2 border-violet-500 pl-3 py-1">
+                            <span class="text-xs font-bold text-violet-400 uppercase tracking-wider block mb-1">조직 인프라 세팅</span>
+                            <p class="text-gray-300">나: (수십 장의 문서 사진을 찍어 올리며) "Wand야, 이번 달 전사 지침사항 문서를 학습해 줘..."</p>
+                            <p class="text-gray-400 mt-1">Wand: "네, 5개 부서별 지침 학습을 완료했습니다. 영업부 김 부장님께는 핵심 사항을 강조하여 안내하겠습니다."</p>
+                        </div>
+                        <div class="border-l-2 border-cyan-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-1">직원 사용 및 보고 업무</span>
+                            <p class="text-gray-300 font-medium">김 부장: "Wand야, 나한테 내려온 이번 달 주요 지침이 뭐야?"</p>
+                            <p class="text-gray-400 mt-1">Wand: "김 부장님, 이번 달 영업부 핵심 지침은 세 가지입니다. 첫째는..."</p>
+                            <p class="text-gray-300 font-medium mt-2">김 부장: (Wand 단말기 터치 후 자신의 공간에서) "업무는 테스트 단계이고 다음 주 완료 예정이야."</p>
+                            <p class="text-gray-400 mt-1">Wand: "김 부장님의 개별 공간에 대화 맥락과 진척 상황을 연속 업데이트해 두겠습니다."</p>
+                        </div>
+                        <div class="border-l-2 border-fuchsia-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block mb-1">관리자 현황 관제</span>
+                            <p class="text-gray-300">나: "Wand야, 이번 주 업무 진행 상황이 어떻게 돼?"</p>
+                            <p class="text-gray-400 mt-1">Wand: "현재 김 부장님이 진행 중인 업무는 다음 주 완료 예정입니다. 다만, 개발부 일정과 충돌이 예상되니 조율이 필요해 보입니다."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-content-senior" class="tab-pane space-y-8 hidden">
+                    <div class="flex flex-wrap gap-2 text-xs font-bold text-fuchsia-400">
+                        <span class="px-2.5 py-1 rounded-md bg-fuchsia-500/10">Zero-UI 물리 인터랙션</span>
+                        <span class="px-2.5 py-1 rounded-md bg-fuchsia-500/10">가족 안심 대시보드</span>
+                        <span class="px-2.5 py-1 rounded-md bg-fuchsia-500/10">Wand 오토콜</span>
+                        <span class="px-2.5 py-1 rounded-md bg-fuchsia-500/10">분석 리포트 요약</span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-extrabold text-white">📸 “멀리 계신 우리 어머니, 오늘 약은 제때 드셨을까?”</h3>
+                    
+                    <div class="space-y-4 max-w-3xl bg-[#0B0F19]/80 p-5 rounded-xl border border-gray-800 text-sm">
+                        <div class="border-l-2 border-violet-500 pl-3 py-1">
+                            <span class="text-xs font-bold text-violet-400 uppercase tracking-wider block mb-1">어머니의 초간편 기록 (Zero-UI)</span>
+                            <p class="text-gray-300">나: "어머니, 복잡한 앱 누르실 필요 없이 약 드실 때마다 Wand만 가볍게 터치해 주세요."</p>
+                            <p class="text-gray-400 mt-1"><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> (어머니가 가볍게 터치할 때마다 스마트폰을 켜지 않아도 AI가 복약 완료 자동 기록)</p>
+                        </div>
+                        <div class="border-l-2 border-cyan-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-1">가족들의 실시간 확인 및 능동 케어</span>
+                            <p class="text-gray-300 font-medium">가족 1: "Wand야, 오늘 어머니 약 챙겨 드셨어?"</p>
+                            <p class="text-gray-400 mt-1">Wand: "네, 오늘 점심 식사 후 15분 뒤에 정확히 복용하셨습니다."</p>
+                            <p class="text-fuchsia-300 font-medium mt-3"><i class="fa-solid fa-triangle-exclamation text-fuchsia-400 mr-1 animate-pulse"></i> Wand 알림:</p>
+                            <p class="text-gray-400 font-light">"어머니께서 저녁 약 복용 시간을 1시간 넘기셨습니다. 스마트폰 푸시 알림 확인이 안 되어, 자체 시스템을 통해 어머니께 **오토콜(자동 전화)**을 발송 중입니다."</p>
+                        </div>
+                        <div class="border-l-2 border-fuchsia-400 pl-3 py-1">
+                            <span class="text-xs font-bold text-fuchsia-400 uppercase tracking-wider block mb-1">병원 진료 및 요약 리포트</span>
+                            <p class="text-gray-300">나: "내일 병원 가는데 지난 한 달간의 데이터를 의사 선생님용 보고서로 요약해 줘."</p>
+                            <p class="text-gray-400 mt-1">Wand: "한 달 치 복약 분석 리포트가 생성되었습니다. 최근 일주일간 저녁 약 누락이 2회 있었습니다."</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 bg-[#06080D] border-t border-gray-900 text-center px-6">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p class="text-sm text-gray-500">&copy; 2026 The Wand Corp. All Rights Reserved.</p>
+            <p class="text-xs text-gray-600 font-light">본 페이지는 서버 유지비 0원 아키텍처 환경 기반으로 초고속 서빙 중입니다. 기술 및 제휴 문의: info@thewand.co.kr</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // 모든 콘텐츠 숨기기
+            document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+            // 선택한 콘텐츠 보이기
+            document.getElementById('tab-content-' + tabId).classList.remove('hidden');
+
+            // 모든 버튼 스타일 초기화
+            const btns = ['creator', 'corporate', 'senior'];
+            btns.forEach(id => {
+                const btn = document.getElementById('tab-btn-' + id);
+                btn.className = "w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer text-gray-400 hover:text-white";
+            });
+
+            // 선택된 버튼 하이라이트 효과 적용
+            const activeBtn = document.getElementById('tab-btn-' + tabId);
+            activeBtn.className = "w-full sm:w-auto px-5 py-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md";
+        }
+    </script>
+</body>
+</html>
