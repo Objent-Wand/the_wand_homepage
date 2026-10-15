@@ -1,0 +1,32 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.co.thewand.app.dev",
+      "sha256_cert_fingerprints": [
+        "58:31:9D:46:F4:34:9F:20:AD:C8:5B:CC:E7:07:49:C8:CA:DF:3A:4B:6E:02:38:F2:F5:C3:6B:19:18:57:75:57"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.co.thewand.app.stg",
+      "sha256_cert_fingerprints": [
+        "58:31:9D:46:F4:34:9F:20:AD:C8:5B:CC:E7:07:49:C8:CA:DF:3A:4B:6E:02:38:F2:F5:C3:6B:19:18:57:75:57"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.co.thewand.app",
+      "sha256_cert_fingerprints": [
+        "58:31:9D:46:F4:34:9F:20:AD:C8:5B:CC:E7:07:49:C8:CA:DF:3A:4B:6E:02:38:F2:F5:C3:6B:19:18:57:75:57"
+      ]
+    }
+  }
+]

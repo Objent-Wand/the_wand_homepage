@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "FHMS5542ZQ.kr.co.thewand.app.dev",
+        "paths": [ "*" ],
+        "components": [ { "/": "/*" } ]
+      },
+      {
+        "appID": "FHMS5542ZQ.kr.co.thewand.app.stg",
+        "paths": [ "*" ],
+        "components": [ { "/": "/*" } ]
+      },
+      {
+        "appID": "FHMS5542ZQ.kr.co.thewand.app",
+        "paths": [ "*" ],
+        "components": [ { "/": "/*" } ]
+      }
+    ]
+  }
+}
