@@ -2,6 +2,38 @@
 <html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <!-- [카카오톡 등 인앱 브라우저 딥링크 앱 연결용 브릿지 스크립트] -->
+    <script>
+    (function() {
+      try {
+        var search = window.location.search || '';
+        if (!search) return;
+        var params = new URLSearchParams(search);
+        if (params.get('wand_fallback') === '1') return;
+
+        var hasShortCode = params.get('c') || params.get('code');
+        var hasLegacyTag = (params.get('mk') || params.get('mkId')) && params.get('tagId');
+        if (!hasShortCode && !hasLegacyTag) return;
+
+        var ua = navigator.userAgent || '';
+        var isAndroid = /Android/i.test(ua);
+        var fallbackUrl = window.location.origin + window.location.pathname + '?wand_fallback=1';
+        var targetAppUrl = isAndroid
+          ? ('intent://open' + search + '#Intent;scheme=thewand;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;S.browser_fallback_url=' + encodeURIComponent(fallbackUrl) + ';end')
+          : ('thewand://open' + search);
+
+        window.location.href = targetAppUrl;
+
+        window.addEventListener('DOMContentLoaded', function() {
+          var bar = document.createElement('div');
+          bar.style.cssText = 'position:fixed;left:16px;right:16px;bottom:28px;z-index:999999;background:#161C2E;color:#FFFFFF;padding:16px 20px;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:space-between;font-family:sans-serif;border:1.5px solid #FFF59D;';
+          bar.innerHTML = '<span style="font-size:15px;font-weight:700;">WAND 앱으로 연결 중입니다</span>' +
+            '<a href="' + targetAppUrl + '" style="background:#2962FF;color:#FFFFFF;text-decoration:none;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:800;">앱에서 열기</a>';
+          document.body.appendChild(bar);
+        });
+      } catch (e) {}
+    })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wand - 내 마음대로 Build-up 하는 나만의 AI 공간</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -16,85 +48,6 @@
     </style>
 </head>
 <body class="overflow-x-hidden">
-
-    <!-- [딥링크 감지 및 앱 실행 브릿지 스크립트] -->
-    <script>
-    (function () {
-        const params = new URLSearchParams(window.location.search);
-        const mkId = params.get('mkId');
-        const macAddress = params.get('macAddress');
-        const sig = params.get('sig');
-        const tagId = params.get('tagId');
-
-        // 4대 필수 딥링크 파라미터가 모두 있을 때만 브릿지 가동 (일반 접속 시 즉시 종료)
-        if (!mkId || !macAddress || !sig || !tagId) return;
-
-        const ua = navigator.userAgent || '';
-        const isAndroid = /Android/i.test(ua);
-        const isIOS = /iPhone|iPad|iPod/i.test(ua);
-        const isKakao = /KAKAOTALK/i.test(ua);
-        const currentUrl = window.location.href;
-        const query = window.location.search;
-
-        // Android용 Intent URL (dev / stg / prod 패키지 자동 매칭)
-        const androidIntentUrl =
-            'intent://thewand.co.kr/' +
-            query +
-            '#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;S.browser_fallback_url=' +
-            encodeURIComponent(currentUrl) +
-            ';end';
-
-        function launchWandApp() {
-            if (isAndroid) {
-                window.location.href = androidIntentUrl;
-            } else if (isIOS) {
-                if (isKakao) {
-                    // 카카오톡 iOS 인앱 브라우저일 경우 외부 Safari 브라우저로 탈출 유도
-                    window.location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(currentUrl);
-                } else {
-                    window.location.href = currentUrl;
-                }
-            }
-        }
-
-        // DOM 로드 즉시 브릿지 안내 UI 오버레이 렌더링 및 자동 실행 시도
-        window.addEventListener('DOMContentLoaded', function () {
-            const overlay = document.createElement('div');
-            overlay.style.cssText =
-                'position:fixed;inset:0;z-index:999999;background:#F2F5F8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;text-align:center;';
-
-            if (isAndroid || isIOS) {
-                overlay.innerHTML = `
-                    <div style="background:#fff;padding:36px 28px;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,0.08);max-width:360px;width:100%;">
-                        <h2 style="margin:0 0 12px;font-size:22px;color:#111;font-weight:800;">WAND 대화방 연결</h2>
-                        <p style="margin:0 0 28px;font-size:15px;color:#444;line-height:1.5;">
-                            공유된 WAND 대화방으로 이동합니다.<br/>자동으로 앱이 열리지 않으면 아래 버튼을 눌러주세요.
-                        </p>
-                        <button id="wand-open-btn" style="width:100%;padding:16px;border:none;border-radius:14px;background:#2962FF;color:#fff;font-size:17px;font-weight:700;cursor:pointer;">
-                            WAND 앱으로 열기
-                        </button>
-                    </div>
-                `;
-                document.body.appendChild(overlay);
-                document.getElementById('wand-open-btn').addEventListener('click', launchWandApp);
-
-                // 진입 즉시 1차 자동 실행
-                setTimeout(launchWandApp, 150);
-            } else {
-                // PC 접속 시 안내
-                overlay.innerHTML = `
-                    <div style="background:#fff;padding:36px 28px;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,0.08);max-width:400px;width:100%;">
-                        <h2 style="margin:0 0 12px;font-size:22px;color:#111;font-weight:800;">WAND 모바일 전용 링크</h2>
-                        <p style="margin:0;font-size:15px;color:#444;line-height:1.6;">
-                            이 링크는 WAND 모바일 앱 전용 초대 링크입니다.<br/>WAND 앱이 설치된 스마트폰에서 링크를 클릭해 주세요.
-                        </p>
-                    </div>
-                `;
-                document.body.appendChild(overlay);
-            }
-        });
-    })();
-    </script>
 
     <!-- [상단 헤더 네비게이션] -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800">
